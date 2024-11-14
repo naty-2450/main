@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{ background-color: #18181b;}
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+.navbar{
+    background-color: black;
+    padding: 10px 0;
+}
+.navbar-list{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+.navbar-list li{
+    margin: 0 15px;
+}
+.navbar-list a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.navbar-list a:hover{
+    color: rgb(167, 23, 23);
+}
+.slider {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+@keyframes slideAnimation{
+    0% {transform: translateX(0);}
+    20% {transform: translateX(0);}
+    25% {transform: translateX(-100%);}
+    45% {transform: translateX(-100%);}
+    50% {transform: translateX(-200%);}
+    70% {transform: translateX(-200%);}
+    75% {transform: translateX(-300%);}
+    100% {transform: translateX(-300%);}
+
+}
+
+.slides {
+    animation: slideAnimation 12s infinite;
+}
+/* Adicionando um padding inferior para garantir espaço antes do footer */
+body {
+    padding-bottom: 60px; /* Ajuste conforme necessário */
+}
+
+/* Isso garante que o rodapé não fique em cima do conteúdo */
+footer {
+    font-style: italic;
+    color: rgb(167, 23, 23);
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 10; 
+   margin-top: 10px;
+}
+
+/* From Uiverse.io by MuhammadHasann */ 
+.card {
+  --bg-card: #27272a;
+  --primary: rgb(167, 23, 23);
+  --primary-800: #951d1d;
+  --primary-shadow: #651010;
+  --light: #d8d8d8;
+  --zinc-800: #1010da;
+  --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  padding: 1rem;
+  width: 14rem;
+  background-color: var(--bg-card);
+
+  border-radius: 1rem;
+  float: left;
+  margin-inline-start: 10px;
+  margin-top: 10px;
+ 
+
+  
+}
+
+.image_container {
+  overflow: hidden;
+  cursor: pointer;
+
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-800);
+
+  border-radius: 0.5rem;
+  
+}
+
+.image_container .image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 3rem;
+  fill: var(--light);
+ 
+}
+
+.title {
+  overflow: clip;
+
+  width: 100%;
+
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--light);
+  text-transform: capitalize;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+
+.size {
+  font-size: 0.75rem;
+  color: var(--light);
+}
+
+.list-size {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  margin-top: 0.25rem;
+}
+
+.list-size .item-list {
+  list-style: none;
+}
+
+.list-size .item-list-button {
+  cursor: pointer;
+
+  padding: 0.5rem;
+  background-color: var(--zinc-800);
+
+  font-size: 0.75rem;
+  color: var(--light);
+
+  border: 2px solid var(--zinc-800);
+  border-radius: 0.25rem;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.item-list-button:hover {
+  border: 2px solid var(--light);
+}
+.item-list-button:focus {
+  background-color: var(--primary);
+
+  border: 2px solid var(--primary-shadow);
+
+  box-shadow: inset 0px 1px 4px var(--primary-shadow);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--light);
+}
+
+.cart-button {
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+
+  padding: 0.5rem;
+  width: 100%;
+  background-image: var(--bg-linear);
+
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--light);
+  text-wrap: nowrap;
+
+  border: 2px solid rgb(178, 62, 62);
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 0.25rem 1px var(--light);
+  
+}
+
+.cart-button .cart-icon {
+  width: 1rem;
+ 
+}
+.image2{
+    width: 100%;
+    height: 200px;
+    border: none;
+    display: block;
+  
+}
+.empty-slide-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    color: white;
+}
+a{
+  color: #d8d8d8;
+  text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+     <ul class="navbar-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#contato">Contato</a></li>
+
+     </ul>
+    </nav>
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="paisagem1.avif" alt="Sanji">
+            </div>
+            <div class="slide">
+                <img src="paisagem2.avif" alt="Chopper">
+            </div>
+            <div class="slide">
+                <img src="paisagem3.jpg" alt="Robin">
+            </div>
+            <div class="slide">
+              <div class="empty-slide-content">
+                  
+                  <img src="paisagem4.avif" alt="">
+              </div>
+          </div>
+          
+        </div>
+    </div>
+<br>
+<div class="card">
+  <div class="image_container">
+    <svg viewBox="0 0 24 24" xmlns="" class="image">
+      <path
+      ></path>
+    </svg>
+    <img src="red.avif" alt="" class="image2">
+  </div>
+  <div class="title">
+    <span>Red Dead Redemption 2</span>
+  </div>
+  
+  <div class="action">
+    <div class="price">
+      <span>R$299,00</span>
+    </div>
+    <button class="cart-button" >
+      <svg
+        class="cart-icon"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+      
+        <path
+          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+        ></path>
+      </svg>
+      <span> <a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/">Add to cart</a></span>
+    </button>
+  </div>
+</div>
+<div class="card">
+  <div class="image_container">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="image">
+      
+    </svg>
+    <img src="god.jpg" alt="" class="image2">
+  </div>
+  <div class="title">
+    <span>God of War</span>
+  </div>
+  
+  <div class="action">
+    <div class="price">
+      <span>R$199,90</span>
+    </div>
+    <button class="cart-button">
+      <svg
+        class="cart-icon"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+        ></path>
+      </svg>
+      <span>Add to cart</span>
+    </button>
+  </div>
+</div>
+<div class="card">
+    <div class="image_container">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="image">
+        
+      </svg>
+      <img src="the.png" alt="" class="image2">
+    </div>
+    <div class="title">
+      <span>the last of us</span>
+    </div>
+    
+    <div class="action">
+      <div class="price">
+        <span>R$299,90</span>
+      </div>
+      <button class="cart-button">
+        <svg
+          class="cart-icon"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <span>Add to cart</span>
+      </button>
+    </div>
+  </div>
+<div class="card">
+    <div class="image_container">
+      <svg viewBox="0 0 24 24" xmlns="" class="image">
+        <path
+        ></path>
+      </svg>
+      <img src="fc25.jpeg" alt="" class="image2">
+    </div>
+    <div class="title">
+      <span>EA SPORTS FC™ 25</span>
+    </div>
+    
+    <div class="action">
+      <div class="price">
+        <span>R$299,00</span>
+      </div>
+      <button class="cart-button">
+        <svg
+          class="cart-icon"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <span>Add to cart</span>
+      </button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image_container">
+      <svg viewBox="0 0 24 24" xmlns="" class="image">
+        <path
+        ></path>
+      </svg>
+      <img src="far.jpg" alt="" class="image2">
+    </div>
+    <div class="title">
+      <span>Farming Simulator 25 </span>
+    </div>
+    
+    <div class="action">
+      <div class="price">
+        <span>R$194,99</span>
+      </div>
+      <button class="cart-button">
+        <svg
+          class="cart-icon"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <span>Add to cart</span>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="image_container">
+    <svg viewBox="0 0 24 24" xmlns="" class="image">
+      <path
+      ></path>
+    </svg>
+    <img src="gta.jpg" alt="" class="image2">
+  </div>
+  <div class="title">
+    <span>Grand Theft Auto V</span>
+  </div>
+  
+  <div class="action">
+    <div class="price">
+      <span>R$109,89</span>
+    </div>
+    <button class="cart-button">
+      <svg
+        class="cart-icon"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+        ></path>
+      </svg>
+      <span>Add to cart</span>
+    </button>
+  </div>
+</div>
+<div class="card">
+  <div class="image_container">
+    <svg viewBox="0 0 24 24" xmlns="" class="image">
+      <path
+      ></path>
+    </svg>
+    <img src="hell.jpeg" alt="" class="image2">
+  </div>
+  <div class="title">
+    <span>HELLDIVERS™ 2</span>
+  </div>
+  
+  <div class="action">
+    <div class="price">
+      <span>R$199,50</span>
+    </div>
+    <button class="cart-button">
+      <svg
+        class="cart-icon"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+        ></path>
+      </svg>
+      <span>Add to cart</span>
+    </button>
+  </div>
+</div>
+<div class="card">
+    <div class="image_container">
+      <svg viewBox="0 0 24 24" xmlns="" class="image">
+        <path
+        ></path>
+      </svg>
+      <img src="out.jpeg" alt="" class="image2">
+    </div>
+    <div class="title">
+      <span>The Outlast Trials </span>
+    </div>
+    
+    <div class="action">
+      <div class="price">
+        <span>R$107,99</span>
+      </div>
+      <button class="cart-button">
+        <svg
+          class="cart-icon"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <span>Add to cart</span>
+      </button>
+    </div>
+  </div>
+ 
+  <div class="card">
+    <div class="image_container">
+      <svg viewBox="0 0 24 24" xmlns="" class="image">
+        <path
+        ></path>
+      </svg>
+      <img src="it.jpeg" alt="" class="image2">
+    </div>
+    <div class="title">
+      <span>It Takes Two  </span>
+    </div>
+    
+    <div class="action">
+      <div class="price">
+        <span>R$199,00</span>
+      </div>
+      <button class="cart-button">
+        <svg
+          class="cart-icon"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <span>Add to cart</span>
+      </button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image_container">
+      <svg viewBox="0 0 24 24" xmlns="" class="image">
+        <path
+        ></path>
+      </svg>
+      <img src="far2.avif" alt="" class="image2">
+    </div>
+    <div class="title">
+      <span>Far Cry® 4</span>
+    </div>
+    
+    <div class="action">
+      <div class="price">
+        <span>R$89,99</span>
+      </div>
+      <button class="cart-button">
+        <svg
+          class="cart-icon"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <span>Add to cart</span>
+      </button>
+    </div>
+  </div>
+  
+  </div>
+  <div class="card">
+    <div class="image_container">
+      <svg viewBox="0 0 24 24" xmlns="" class="image">
+        <path
+        ></path>
+      </svg>
+      <img src="mela.jpeg" alt="" class="image2">
+    </div>
+    <div class="title">
+      <span>Melatonin</span>
+    </div>
+    
+    <div class="action">
+      <div class="price">
+        <span>R$49,99</span>
+      </div>
+      <button class="cart-button">
+        <svg
+          class="cart-icon"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <span>Add to cart</span>
+      </button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image_container">
+      <svg viewBox="0 0 24 24" xmlns="" class="image">
+        <path
+        ></path>
+      </svg>
+      <img src="ghost.jpeg" alt="" class="image2">
+    </div>
+    <div class="title">
+      <span>Ghost of Tsushima VERSÃO DO DIRETOR</span>
+    </div>
+    
+    <div class="action">
+      <div class="price">
+        <span>R$249,90</span>
+      </div>
+      <button class="cart-button">
+        <svg
+          class="cart-icon"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <span>Add to cart</span>
+      </button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image_container">
+      <svg viewBox="0 0 24 24" xmlns="" class="image">
+        <path
+        ></path>
+      </svg>
+      <img src="hades.avif" alt="" class="image2">
+    </div>
+    <div class="title">
+      <span>Hades</span>
+    </div>
+    
+    <div class="action">
+      <div class="price">
+        <span>R$73,99</span>
+      </div>
+      <button class="cart-button">
+        <svg
+          class="cart-icon"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <span>Add to cart</span>
+      </button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image_container">
+      <svg viewBox="0 0 24 24" xmlns="" class="image">
+        <path
+        ></path>
+      </svg>
+      <img src="under.jpeg" alt="" class="image2">
+    </div>
+    <div class="title">
+      <span>Undertale</span>
+    </div>
+    
+    <div class="action">
+      <div class="price">
+        <span>R$19,99</span>
+      </div>
+      <button class="cart-button">
+        <svg
+          class="cart-icon"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <span>Add to cart</span>
+      </button>
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="image_container">
+      <svg viewBox="0 0 24 24" xmlns="" class="image">
+        <path
+        ></path>
+      </svg>
+      <img src="hollow.webp" alt="" class="image2">
+    </div>
+    <div class="title">
+      <span>Hollow knight</span>
+    </div>
+    
+    <div class="action">
+      <div class="price">
+        <span>R$46,99</span>
+      </div>
+      <button class="cart-button">
+        <svg
+          class="cart-icon"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <span>Add to cart</span>
+      </button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image_container">
+      <svg viewBox="0 0 24 24" xmlns="" class="image">
+        <path
+        ></path>
+      </svg>
+      <img src="ri.avif" alt="" class="image2">
+    </div>
+    <div class="title">
+      <span>riders republic</span>
+    </div>
+    
+    <div class="action">
+      <div class="price">
+        <span>R$46,99</span>
+      </div>
+      <button class="cart-button">
+        <svg
+          class="cart-icon"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+        <span>Add to cart</span>
+      </button>
+    </div>
+  </div>
+    <footer>
+        <p>&copy; 2024 Meu site personalizado | Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
