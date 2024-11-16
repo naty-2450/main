@@ -35,6 +35,41 @@ box-sizing: border-box;
 body {
     padding-bottom: 60px; /* Ajuste conforme necessário */
 }
+.slider {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+@keyframes slideAnimation{
+    0% {transform: translateX(0);}
+    20% {transform: translateX(0);}
+    25% {transform: translateX(-100%);}
+    45% {transform: translateX(-100%);}
+    50% {transform: translateX(-200%);}
+    70% {transform: translateX(-200%);}
+    75% {transform: translateX(-300%);}
+    100% {transform: translateX(-300%);}
+
+}
+
+.slides {
+    animation: slideAnimation 12s infinite;
+}
 
 /* Isso garante que o rodapé não fique em cima do conteúdo */
 footer {
@@ -48,6 +83,9 @@ footer {
     bottom: 0;
     z-index: 10; /* Garante que o footer fique acima do conteúdo, mas abaixo da barra de navegação */
 }
+#desc{
+    font-size: 30px;
+}
     </style>
 </head>
 <body>
@@ -60,7 +98,28 @@ footer {
 
      </ul>
     </nav>
-<h3>asnbdmnabsmndbabsdnmabsdnba</h3>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="paisagem1.avif" alt="Sanji">
+            </div>
+            <div class="slide">
+                <img src="paisagem2.avif" alt="Chopper">
+            </div>
+            <div class="slide">
+                <img src="paisagem3.jpg" alt="Robin">
+            </div>
+            <div class="slide">
+              <div class="empty-slide-content">
+                  
+                  <img src="paisagem4.avif" alt="">
+              </div>
+          </div>
+          
+        </div>
+    </div>
+<p id="desc">
+    A Gamersaving é uma plataforma de comparação de preços de jogos que permite aos usuários encontrar as melhores ofertas para jogos digitais e físicos em diversas lojas online. Com uma interface simples e eficiente, o site coleta dados de preços atualizados de múltiplos varejistas, ajudando os gamers a economizar ao comprar títulos para consoles, PC e dispositivos móveis. Além disso, oferece filtros por plataforma, gênero e faixa de preço, tornando a busca mais personalizada e prática.</p>
     
     <footer>
         <p>&copy; 2024 Meu site personalizado | Todos os direitos reservados</p>
