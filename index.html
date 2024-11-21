@@ -13,11 +13,13 @@ box-sizing: border-box;
 .navbar{
     background-color: black;
     padding: 10px 0;
+    height: 100px;
 }
 .navbar-list{
     list-style-type: none;
     display: flex;
     justify-content: center;
+    padding: 20px;
 }
 .navbar-list li{
     margin: 0 15px;
@@ -25,7 +27,7 @@ box-sizing: border-box;
 .navbar-list a{
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 30px;
 }
 .navbar-list a:hover{
     color: rgb(167, 23, 23);
@@ -256,12 +258,17 @@ a{
 .p{
   color: #d8d8d8;
 }
+#logo{
+  position: absolute;
+  width: 120px;
+}
  
 
     </style>
 </head>
 <body>
     <nav class="navbar">
+      <img src="logo gamer.png" alt="" id="logo">
      <ul class="navbar-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="sobre.html">Sobre</a></li>
