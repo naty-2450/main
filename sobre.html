@@ -13,11 +13,13 @@ box-sizing: border-box;
 .navbar{
     background-color: black;
     padding: 10px 0;
+    height: 90px;
 }
 .navbar-list{
     list-style-type: none;
     display: flex;
     justify-content: center;
+    padding: 15px;
 }
 .navbar-list li{
     margin: 0 15px;
@@ -25,7 +27,7 @@ box-sizing: border-box;
 .navbar-list a{
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 25px;
 }
 .navbar-list a:hover{
     color: rgb(167, 23, 23);
@@ -106,7 +108,12 @@ footer {
   font-style: italic;
   font-size: 50px;
   color: #d8d8d8;
-text-align: center;
+  text-align: center;
+  box-shadow: 5px color(red);
+}
+#logo{
+    position: absolute;
+    width: 80px;
 }
 
 
@@ -114,6 +121,7 @@ text-align: center;
 </head>
 <body>
     <nav class="navbar">
+        <img src="logo gamer.png" alt="" id="logo">
      <ul class="navbar-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="sobre.html">Sobre</a></li>
